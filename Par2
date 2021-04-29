@@ -1,0 +1,61 @@
+var temp = 'new button';
+var button = `button title=${temp}>Button</button>`;
+
+
+<div id="list"></div>
+
+function makeUL(array) {
+    var list = document.createElement('ul');
+
+    for(var i = 0; i < array.length; i++) {
+
+        var item = document.createElement('li');
+        item.appendChild(document.createTextNode(array[i]));
+        if(i%2 == 0) {
+        list.appendChild(item);
+        }
+    }
+
+    // Finally, return the constructed list:
+    return list;
+}
+
+document.getElementById('list').appendChild(makeUL(30));
+
+const P1 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 3, 'one');
+});
+
+const P2 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 2, 'two');
+});
+const P3 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 1, 'three');
+});
+const P4 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 2, 'four');
+});
+const P5 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 3, 'five');
+});
+const P6 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 1, 'siz');
+});
+const P7 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 2, 'seven');
+});
+const P8 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 1, 'eight');
+});
+const P9 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 2, 'nine');
+});
+const P10 = new Promise((resolve, reject) => {
+  setTimeout(resolve, 3, 'ten');
+});
+
+let array = [P1, P2, P3, P4, P5, P6, P7, P8, P9, P10];
+
+Promise.allSettled(arr).then((values) => {
+console.log(values);
+});
